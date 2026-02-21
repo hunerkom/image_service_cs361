@@ -32,7 +32,7 @@ while True:
     if os.path.exists(image_path):
         # Read and send the image
         image = cv2.imread(image_path)
-        _, buffer = cv2.imencode('.png', image)
+        _, buffer = cv2.imencode('.png', image)                     # Returns a status code and the encoded image
         socket.send(buffer.tobytes())
         print(f"Sent image: {filename}")
     else:
@@ -40,5 +40,4 @@ while True:
         socket.send_string(f"ERROR: File {filename} not found")
         print(f"File not found: {filename}")
         
-    print(f"Error receiving request: {e}")
     continue
