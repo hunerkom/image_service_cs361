@@ -1,3 +1,8 @@
+# CS 361 Image Service Microservice Test
+# Group 33, David & Mason
+# Description: Verifies that the image service properly retrieves and returns images as intended.
+# Communication Protocol: ZeroMQ
+
 import zmq
 
 # Setup ZeroMQ
@@ -30,3 +35,4 @@ except UnicodeDecodeError:
     with open("received_test_image.png", "wb") as f:
         f.write(reply)
     print("Saved as received_test_image.png")
+
