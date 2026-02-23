@@ -1,7 +1,7 @@
 361_image_service
 CS 361 Microservice that returns an image file using ZeroMQ communication.
 
-Group 33: David & Mason
+Group 33
 
 Description
 This microservice handles image retrieval and returns .jpg images given an image name from the client. It uses imagezmq and ZeroMQ for efficient communication between client and server.
@@ -15,6 +15,7 @@ Communciation contract and example:
     3. A .png file with the appropriate filename will be sent from image_service to the main application.
         IS: socket.send(buffer.tobytes())
         MA: reply = socket.recv()
+        MA: message = reply.decode("utf-8")
 
 
 
